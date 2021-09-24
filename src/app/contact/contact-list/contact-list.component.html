@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading d-flex align-items-center justify-content-between">
+    <h3 class="panel-title">
+      Contacts
+    </h3>
+    <button type="button" class="btn btn-success">
+      New Contact
+    </button>
+  </div>
+  <div class="panel-body">
+    <div class="contact-item d-flex justify-content-between" *ngFor="let contact of contacts">
+      <h4>{{contact.name}}</h4>
+      <img class="contact-item-image" src="{{contact.imageUrl}}" alt="{{contact.name}}-image">
+    </div>
+  </div>
+</div>

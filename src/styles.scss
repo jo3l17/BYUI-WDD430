@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+
+$limit_margin: 5;
+$loop-start: 0;
+$loop-end: $limit_margin + 1;
+
+//make column classes
+@for $index from $loop-start to $loop-end {
+    .mb-#{$index} {
+        margin-bottom: $index * .25em !important;
+    }
+    .mt-#{$index} {
+        margin-top: $index * .25em !important;
+    }
+    .ml-#{$index} {
+        margin-left: $index * .25em !important;
+    }
+    .mr-#{$index} {
+        margin-right: $index * .25em !important;
+    }
+    .mx-#{$index} {
+        margin-left: $index * .25em !important;
+        margin-right: $index * .25em !important;
+    }
+    .my-#{$index} {
+        margin-top: $index * .25em !important;
+        margin-bottom: $index * .25em !important;
+    }
+    .m-#{$index} {
+        margin: $index * .25em;
+    }
+}
+
+.m-auto {
+  margin: auto !important;
+}
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+.ml-auto {
+  margin-left: auto !important;
+}
+
+@for $index from $loop-start to $loop-end {
+    .pb-#{$index} {
+        padding-bottom: $index * .25em !important;
+    }
+    .pt-#{$index} {
+        padding-top: $index * .25em !important;
+    }
+    .pl-#{$index} {
+        padding-left: $index * .25em !important;
+    }
+    .pr-#{$index} {
+        padding-right: $index * .25em !important;
+    }
+    .px-#{$index} {
+        padding-right: $index * .25em !important;
+        padding-left: $index * .25em !important;
+    }
+    .py-#{$index} {
+        padding-top: $index * .25em !important;
+        padding-bottom: $index * .25em !important;
+    }
+    .p-#{$index} {
+        padding: $index * .25em;
+    }
+}
+.p-auto {
+    padding: auto;
+}
+.pb-auto {
+    padding-bottom: auto;
+}
+.pt-auto {
+    padding-top: auto;
+}
+.pr-auto {
+    padding-right: auto;
+}
+.pl-auto {
+    padding-left: auto;
+}
+.px-auto {
+  padding-right: auto !important;
+  padding-left: auto !important;
+}
+.py-auto {
+  padding-top: auto !important;
+  padding-bottom: auto !important;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.d-flex{
+  display: flex;
+
+}
+.align-items-center{
+  align-items: center;
+}
+.justify-content-between{
+  justify-content: space-between;
+}
+.flex-column{
+  flex-direction: column;
+}
+.d-block{
+  display: block;
+}
