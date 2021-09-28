@@ -1,4 +1,14 @@
-<cms-header></cms-header>
+<cms-header (selectedFeatureEvent)="switchView($event)"></cms-header>
 <div class="container">
-  <cms-contact></cms-contact>
+  <span [ngSwitch]="selectedFeature">
+    <ng-container *ngSwitchCase="'documents'">
+      <cms-documents></cms-documents>
+    </ng-container>
+    <ng-container *ngSwitchCase="'messages'">
+      <cms-message-list></cms-message-list>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <cms-contacts></cms-contacts>
+    </ng-container>
+  </span>
 </div>

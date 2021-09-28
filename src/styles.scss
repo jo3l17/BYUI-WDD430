@@ -4,6 +4,10 @@ $limit_margin: 5;
 $loop-start: 0;
 $loop-end: $limit_margin + 1;
 
+a{
+  cursor: pointer;
+}
+
 //make column classes
 @for $index from $loop-start to $loop-end {
     .mb-#{$index} {
