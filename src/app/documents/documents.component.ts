@@ -8,7 +8,7 @@ import { Document } from './document.model';
 })
 export class DocumentsComponent implements OnInit {
 
-  selectedDocument: Document = new Document();
+  selectedDocument!: Document
 
   constructor() { }
 
