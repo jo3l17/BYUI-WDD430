@@ -3,14 +3,14 @@
     <h3 class="panel-title">
       Documents
     </h3>
-    <button type="button" class="btn btn-success">
+    <button type="button" class="btn btn-success" [routerLink]="['new']">
       Add Document
     </button>
   </div>
   <div class="panel-body">
     <div class="center-panel">
-      <cms-document-item *ngFor="let document of documents" [document]="document"
-        (click)="onSelectedDocument(document)"></cms-document-item>
+      <cms-document-item *ngFor="let document of documents" [document]="document" [routerLink]="['/documents', document.id]">
+      </cms-document-item>
     </div>
   </div>
 

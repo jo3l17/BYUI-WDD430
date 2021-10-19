@@ -8,12 +8,12 @@
     <div class="d-flex justify-content-between align-items-center">
       <img class="contact-detail-image" src="{{contact.imageUrl}}" alt="{{contact.name}}-detail-image">
       <div class="action-buttons">
-        <button type="button" class="btn btn-primary">
+        <a type="button" class="btn btn-primary" [routerLink]="['/contacts',contact.id,'edit']">
           Edit
-        </button>
-        <button type="button" class="btn btn-danger">
+        </a>
+        <a type="button" class="btn btn-danger" (click)="onDelete()">
           Delete
-        </button>
+        </a>
       </div>
     </div>
 
