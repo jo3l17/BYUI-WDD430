@@ -8,7 +8,8 @@
     </button>
   </div>
   <div class="panel-body">
-    <cms-contact-item *ngFor="let contact of contacts" [contact]="contact" [routerLink]="['/contacts', contact.id]">
+    <cms-contact-item class="d-block mb-2" *ngFor="let contact of contacts" [contact]="contact" [routerLink]="['/contacts', contact.id]"
+    dnd-draggable [dragEnabled]="true" [dragData]="contact" [dropZones]="['contactGrup']">
     </cms-contact-item>
   </div>
 </div>

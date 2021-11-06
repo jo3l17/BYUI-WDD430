@@ -1,4 +1,4 @@
-<a class="contact-item d-flex justify-content-between" routerLinkActive="active">
+<div class="contact-item d-flex justify-content-between" routerLinkActive="active">
   <h4>{{contact.name}}</h4>
-  <img class="contact-item-image" src="{{contact.imageUrl}}" alt="{{contact.name}}-image">
-</a>
+  <img *ngIf="contact.imageUrl!==' '&&contact.imageUrl" class="contact-item-image" src="{{contact.imageUrl}}" alt="{{contact.name}}-image">
+</div>
