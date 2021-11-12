@@ -23,6 +23,8 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DndModule } from 'ng2-dnd';
 import { CommonModule } from '@angular/common';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { CommonModule } from '@angular/common';
     DropdownDirective,
     DocumentEditComponent,
     ContactEditComponent,
+    ContactsFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -49,6 +52,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     DndModule.forRoot(),
   ],
   providers: [ContactService, MessageService],

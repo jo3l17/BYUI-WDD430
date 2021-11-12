@@ -1,15 +1,32 @@
+<!-- <div class="panel panel-default">
+  <div class="panel-heading d-flex align-items-center justify-content-between"> -->
+
 <div class="panel panel-default">
-  <div class="panel-heading d-flex align-items-center justify-content-between">
-    <h3 class="panel-title">
-      Contacts
-    </h3>
-    <button type="button" class="btn btn-success" [routerLink]="['new']">
-      New Contact
-    </button>
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-12">
+        <span class="title pad-left-right">Contacts</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="input-group pull-left pad-left-right col-xs-7">
+
+          <input class="form-control" type="text" #searchBox placeholder="Enter a search value" aria-label="Search"
+            name="sear" (keyup)="search(searchBox.value)">
+
+          <div class="glyphicon glyphicon-search input-group-addon btn" (click)="search(searchBox.value)"></div>
+        </div>
+        <div class="pull-right pad-left-right">
+          <a class="btn btn-success" [routerLink]="['new']">New Contact</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="panel-body">
-    <cms-contact-item class="d-block mb-2" *ngFor="let contact of contacts" [contact]="contact" [routerLink]="['/contacts', contact.id]"
-    dnd-draggable [dragEnabled]="true" [dragData]="contact" [dropZones]="['contactGrup']">
+    <cms-contact-item class="d-block mb-2" *ngFor="let contact of contacts | contactsFilter: searchBox.value "
+      [contact]="contact" [routerLink]="['/contacts', contact.id]" dnd-draggable [dragEnabled]="true"
+      [dragData]="contact" [dropZones]="['contactGrup']">
     </cms-contact-item>
   </div>
 </div>
