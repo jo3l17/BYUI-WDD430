@@ -22,7 +22,7 @@
   <div class="panel-body">
     <span *ngIf="contact.email!==' '&&contact.email" class="d-block mb-2"><b>Email: </b>{{contact.email}}</span>
     <span *ngIf="contact.phone!==' '&&contact.phone" class="d-block mb-2"><b>Phone: </b>{{contact.phone}}</span>
-    <div *ngIf="contact.group.length > 0">
+    <div *ngIf="contact.group && contact.group.length > 0">
       <div class="d-block mb-2"><b>Contacts in Team: </b>
         <cms-contact-item class="d-block mb-2" *ngFor="let contact of contact.group"  [contact]="contact">
         </cms-contact-item>

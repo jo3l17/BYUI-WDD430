@@ -6,18 +6,19 @@ import { Message } from '../message.model';
 @Component({
   selector: 'cms-message-item',
   templateUrl: './message-item.component.html',
-  styleUrls: ['./message-item.component.scss']
+  styleUrls: ['./message-item.component.scss'],
 })
 export class MessageItemComponent implements OnInit {
+  @Input() message!: Message;
+  messageSender: string = '';
 
-  @Input() message!: Message
-  messageSender: string = ""
-
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService) {}
 
   ngOnInit(): void {
-    const contact: Contact = this.contactService.getContact(this.message.sender);
+    // console.log(this.message.sender);
+    const contact: Contact = this.contactService.getContact(
+      this.message.sender
+    );
     this.messageSender = contact.name;
   }
-
 }

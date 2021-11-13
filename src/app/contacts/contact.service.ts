@@ -30,8 +30,12 @@ export class ContactService {
       );
   }
 
-  getContacts(): Contact[] {
-    return this.contacts.slice();
+  async getContacts(): Promise<Contact[]> {
+    return await this.http
+      .get<Contact[]>(
+        'https://wdd430-97498-default-rtdb.firebaseio.com/contacts.json'
+      )
+      .toPromise();
   }
 
   getContact(id: string): Contact {
