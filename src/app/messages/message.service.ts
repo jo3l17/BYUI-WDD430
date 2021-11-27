@@ -15,7 +15,8 @@ export class MessageService {
     // this.messages = MOCKMESSAGES;
     this.http
       .get<Message[]>(
-        'https://wdd430-97498-default-rtdb.firebaseio.com/messages.json'
+        // 'https://wdd430-97498-default-rtdb.firebaseio.com/messages.json'
+        'http://localhost:3000/messages'
       )
       .subscribe(
         (messages: Message[]) => {
@@ -54,9 +55,23 @@ export class MessageService {
   }
 
   addMessage(message: Message) {
-    this.messages.push(message);
+    // this.messages.push(message);
     // this.messageChangedEvent.emit(this.messages.slice());
-    this.storeMessages();
+    // this.storeMessages();
+    if (!message) return;
+    message.id = '';
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http
+      .post<{ message: string; msg: Message }>(
+        'http://localhost:3000/messages',
+        message,
+        { headers: headers }
+      )
+      .subscribe((responseData) => {
+        this.messages.push(responseData.msg);
+        this.messageChangedEvent.emit(this.messages.slice());
+      });
   }
 
   storeMessages() {
